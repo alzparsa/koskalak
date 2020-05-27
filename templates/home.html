@@ -1,0 +1,12 @@
+
+{% extends 'layout.html' %}
+
+{% block body %}
+  <div class="jumbotron text-center">
+    <h1>Project Parsa</h1>
+    <p class="lead">BTC to Cad</p>    
+    {% block BTCValueCad %}
+      <h2 class="font-italic">{{BTCValueCad}}</h2>
+    {% endblock %}
+  </div>
+{% endblock %}
