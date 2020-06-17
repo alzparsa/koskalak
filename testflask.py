@@ -25,5 +25,19 @@ def GetRate_irr():
     return (Rate_irr)
 
 
+def GetRate_btc():
+    url = 'https://api.coingecko.com/api/v3/exchange_rates'
+    r = requests.get(url)
+    Rate_btc = r.json()["rates"]["usd"]["value"]
+    return (Rate_btc)
+
+
+def Exchange_btcToirr():
+    x = GetRate_irr()
+    y = GetRate_btc()
+    btc_rial = x * y
+    return(btc_rial)
+
+
 if __name__ == '__main__':
     app.run(debug=True)
